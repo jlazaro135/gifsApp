@@ -1,0 +1,25 @@
+<div class="d-flex flex-column p-2">
+  <div class="">
+    <gifs-search-box></gifs-search-box>
+  </div>
+  <div class="p-2 py-4">
+    <gifs-card-list
+    [gifs]="gifs"
+    >
+  </gifs-card-list>
+  </div>
+  <nav *ngIf="gifs.length > 0" aria-label="Page navigation example">
+    <ul class="pagination justify-content-center">
+      <li class="page-item"><a
+        class="page-link"
+        [ngClass]="{'disabled': firstGifPage === 0 }"
+        (click)="previousPage()"
+        href="#">Anterior</a></li>
+
+      <li class="page-item"><a class="page-link"
+        [ngClass]="{'disabled': lastGifPage >= gifListLength}"
+        (click)="nextPage()"
+        href="#">Siguiente</a></li>
+    </ul>
+  </nav>
+</div>

@@ -1,0 +1,18 @@
+  <div class="d-flex justify-content-center">
+    <img
+    [src]="url"
+    [alt]="alt"
+    class="card-img-top animate__animated animate__fadeIn"
+    (load)="onLoad()"
+    [ngStyle]="{display: hasLoaded ? '' : 'none'}"
+    />
+    <div
+    *ngIf="!hasLoaded"
+    [ngStyle]="{aspectRatio: aspectRatio(), width: width+'px', height: 'auto', maxWidth: '100%'}"
+    class="d-flex justify-content-center align-items-center"
+    >
+      <img src="assets/loader.svg" alt="loading"
+    />
+    </div>
+  </div>
+

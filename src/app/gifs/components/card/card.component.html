@@ -1,0 +1,24 @@
+<div class="card mb-2 text-center bg-dark overflow-hidden">
+  <shared-lazy-image
+  [url]="gif.images.downsized_medium.url"
+  [alt]="gif.title || 'No Name'"
+  [height]="gif.images.downsized_medium.height"
+  [width]="gif.images.downsized_medium.width"
+  ></shared-lazy-image>
+  <div class="card-body text-white">
+    <h5 class="card-text text-center">
+      {{gif.title}}
+    </h5>
+    <button
+    role="button"
+    class="btn fw-bold mt-2"
+    [ngClass]="{'btn-success text-white': isCopied, 'btn-light text-black-50': !isCopied}"
+    style="width: fit-content"
+    #myButton
+    (click)="copyUrl()"
+    >
+    🔗 Copiar GIF Link
+    </button>
+  </div>
+</div>
+

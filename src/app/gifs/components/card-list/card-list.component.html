@@ -1,0 +1,17 @@
+<div
+class="row"
+*ngIf="gifs.length > 0; else noGifs"
+>
+    <gifs-card
+    *ngFor="let gif of gifs"
+    [gif]="gif"
+    class="col-md-3 col-sm-6"
+    >
+    </gifs-card>
+
+</div>
+<ng-template #noGifs>
+
+  <h2 *ngIf="tags().length === 0" class="text-center">¡Introduce una keyword! 🙂</h2>
+  <h4 *ngIf="tags().length > 0" class="text-center">No hay Gifs con esa keyword 😐</h4>
+</ng-template>
